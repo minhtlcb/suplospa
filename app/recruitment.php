@@ -8,4 +8,5 @@ class recruitment extends Model
 {
     //
     protected $table='recruitment';
+       protected $primaryKey = 'id_recruitment';
 }

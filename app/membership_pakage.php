@@ -8,6 +8,6 @@ class membership_pakage extends Model
 {
     //
      protected $table='membership_pakage';
-
+   protected $primaryKey = 'id_package';
   
 }

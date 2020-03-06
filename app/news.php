@@ -8,7 +8,7 @@ class news extends Model
 {
     //
      protected $table='news';
-
+   protected $primaryKey = 'id_news';
     public function user()
     {
     	return $this->belongsTo('App\User','id','id');

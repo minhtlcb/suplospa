@@ -98,6 +98,46 @@ Route::get('index2','AdminController@index2');
 
            Route::get('delete/{id_product}','ProductController@delete');
      });
+     
+    Route::group(['prefix' => 'news'], function() {
+        Route::get('get', 'NewsController@get');
+        Route::post('postadd', 'NewsController@postadd');
+        Route::get('add', 'NewsController@add');
+
+        Route::post('update/{id_news}', 'NewsController@postupdate');
+        Route::get('update/{id_news}', 'NewsController@update');
+        Route::get('delete/{id_news}', 'NewsController@delete');
+    });
+
+    Route::group(['prefix' => 'news_category'], function() {
+        Route::get('get', 'NewsCategoryController@get');
+        Route::post('postadd', 'NewsCategoryController@postadd');
+        Route::get('add', 'NewsCategoryController@add');
+
+        Route::post('update/{id_category}', 'NewsCategoryController@postupdate');
+        Route::get('update/{id_category}', 'NewsCategoryController@update');
+        Route::get('delete/{id_category}', 'NewsCategoryController@delete');
+    });
+
+    Route::group(['prefix' => 'recruitment'], function() {
+        Route::get('get', 'RecruitmentController@get');
+        Route::post('postadd', 'RecruitmentController@postadd');
+        Route::get('add', 'RecruitmentController@add');
+
+        Route::post('update/{id_recruitment}', 'RecruitmentController@postupdate');
+        Route::get('update/{id_recruitment}', 'RecruitmentController@update');
+        Route::get('delete/{id_recruitment}', 'RecruitmentController@delete');
+    });
+
+    Route::group(['prefix' => 'membership_pakage'], function() {
+        Route::get('get', 'MemPackageController@get');
+        Route::post('postadd', 'MemPackageController@postadd');
+        Route::get('add', 'MemPackageController@add');
+
+        Route::post('update/{id_package}', 'MemPackageController@postupdate');
+        Route::get('update/{id_package}', 'MemPackageController@update');
+        Route::get('delete/{id_package}', 'MemPackageController@delete');
+    });
 });
 
 

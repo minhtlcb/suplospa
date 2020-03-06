@@ -48,7 +48,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{url('admin/introduce/get')}}"><i class="fa fa-circle-o"></i>Giới thiệu</a></li>
-             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Slide</a></li>
+             <li><a href="{{url('admin/product/get')}}"><i class="fa fa-circle-o"></i>Slide</a></li>
 
             <li><a href="{{url('admin/trademark/get')}}"><i class="fa fa-circle-o"></i>Thương hiệu</a></li>
            
@@ -56,15 +56,15 @@
             <li><a href="{{url('admin/type-service/get')}}"><i class="fa fa-circle-o"></i>Loại dịch vụ</a></li>
           <li><a href="{{url('admin/product_type/get')}}"><i class="fa fa-circle-o"></i>Loại sản phẩm</a></li>
              <li><a href="{{url('admin/product/get')}}"><i class="fa fa-circle-o"></i>Sản phẩm</a></li>
-             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Loại tin tức</a></li>
-              <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Tin tức</a></li>
+             <li><a href="{{url('admin/news_category/get')}}"><i class="fa fa-circle-o"></i>Loại tin tức</a></li>
+              <li><a href="{{url('admin/news/get')}}"><i class="fa fa-circle-o"></i>Tin tức</a></li>
 
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Gói Khách hàng</a></li>
-      <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Hỗ trợ</a></li>
+            <li><a href="{{url('admin/membership_pakage/get')}}"><i class="fa fa-circle-o"></i>Gói Khách hàng</a></li>
+      <li><a href="{{url('admin/product/get')}}"><i class="fa fa-circle-o"></i>Hỗ trợ</a></li>
 
             
 
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Tuyển dụng</a></li>
+            <li><a href="{{url('admin/recruitment/get')}}"><i class="fa fa-circle-o"></i>Tuyển dụng</a></li>
 
 
           

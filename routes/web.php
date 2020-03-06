@@ -21,7 +21,13 @@ Route::get('index2','AdminController@index2');
     Route::group(['prefix'=>'introduce'],function()
      {
         Route::get('get','IntroduceController@get');
+
+        Route::get('add','IntroduceController@add');
+        Route::post('add','IntroduceController@postadd');
+        
+        Route::get('update/{id_introduce}','IntroduceController@update');
         Route::post('update/{id_introduce}','IntroduceController@postupdate');
+
      });
     Route::group(['prefix'=>'service'],function()
      {
@@ -50,6 +56,47 @@ Route::get('index2','AdminController@index2');
         Route::post('update/{id_type_service}','TypeServiceController@postupdate');
 
            Route::get('delete/{id_type_service}','TypeServiceController@delete');
+     });
+     Route::group(['prefix'=>'product_type'],function()
+     {
+        Route::get('get','ProductTypeController@get');
+
+        Route::get('add','ProductTypeController@add');
+         Route::post('add','ProductTypeController@postadd');
+
+       
+       Route::get('update/{id_types}','ProductTypeController@update');
+
+        Route::post('update/{id_types}','ProductTypeController@postupdate');
+
+           Route::get('delete/{id_types}','ProductTypeController@delete');
+     });
+      Route::group(['prefix'=>'trademark'],function()
+     {
+        Route::get('get','TrademarkController@get');
+
+        Route::get('add','TrademarkController@add');
+         Route::post('add','TrademarkController@postadd');
+
+       
+        Route::get('update/{id_trademark}','TrademarkController@update');
+        Route::post('update/{id_trademark}','TrademarkController@postupdate');
+
+           Route::get('delete/{id_trademark}','TrademarkController@delete');
+     });
+
+     Route::group(['prefix'=>'product'],function()
+     {
+        Route::get('get','ProductController@get');
+
+        Route::get('add','ProductController@add');
+         Route::post('add','ProductController@postadd');
+
+       
+        Route::get('update/{id_product}','ProductController@update');
+        Route::post('update/{id_product}','ProductController@postupdate');
+
+           Route::get('delete/{id_product}','ProductController@delete');
      });
 });
 

@@ -15,11 +15,9 @@ class CreateClassificationGroup extends Migration
     {
         Schema::create('classification_group', function (Blueprint $table) {
             $table->bigIncrements('id_group');
-            $table->bigInteger('id_product')->unsigned();
-         
+            $table->bigInteger('id_product')->unsigned(); 
             $table->string('title');
             $table->integer('dequy');
-
             $table->foreign('id_product')->references('id_product')->on('product')->onDelete('cascade');
         });
     }

@@ -8,7 +8,7 @@ class product extends Model
 {
     //
     protected $table='product';
-
+   protected $primaryKey = 'id_product';
     public function product_type()
     {
     	return $this->belongsTo('App\product_type','id_types','id_types');
@@ -17,16 +17,18 @@ class product extends Model
     {
     	return $this->belongsTo('App\trademark','id_trademark','id_trademark');
     }
-      public function classification_group1()
+
+     public function classification_group()
     {
-    	return $this->belongsTo('App\classification_group1','id_product','id_product');
+        return $this->hasMany('App\classification_group','id_product','id_product');
     }
-      public function classification_group2()
-    {
-    	return $this->belongsTo('App\classification_group2','id_product','id_product');
-    }
+
     public function classification_name()
     {
-    	return $this->hasManyThrough('App\classification_name','App\classification_group1','id_product','id_product','id_product');
+    	return $this->hasManyThrough('App\classification_name','App\classification_group','id_product','id_group','id_product');
+    }
+      public function image_product()
+    {
+        return $this->hasMany('App\image_product','id_product','id_product');
     }
 }

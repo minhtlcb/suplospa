@@ -17,8 +17,8 @@ class CreateClassificationName extends Migration
         
             $table->bigIncrements('id_classification');
             $table->bigInteger('id_group')->unsigned()->nullable();
-            $table->string('name');
-            $table->string('image');
+            $table->string('name')->nullable();
+            $table->string('image')->nullable();
             $table->integer('quantity');
             $table->integer('price');
 

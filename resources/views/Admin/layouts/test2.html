@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js">
+</script>
+<script>
+
+  $("button").live("click", function(){
+    $("p").hide();
+    $(".add").append("<thead><tr><td></td><td><div class='c1'><a>click</a></div></td></tr></thead><tr><td><input type=''text' name='name1'></td></tr>")
+
+  });
+   $(".1").live("click", function(){
+    alert('sj');
+  });
+     $(".2").live("click", function(){
+    $("p").show();
+  });
+        $(".c1").live("click", function(){
+    alert ('54');
+  });
+
+</script>
+</head>
+<body>
+
+<p>This is a paragraph.
+<a class="1">jhjk</a></p>
+
+<button>Click me!</button>
+<div class="add"></div>
+<div class="2">Click323 me!</div>
+<br><br>
+
+<div><b>Note:</b> The live() method was deprecated in jQuery version 1.7, and removed in version 1.9. We have used an earlier version of jQuery (1.7 in the script tag), for this example to work.</div> 
+
+</body>
+</html>

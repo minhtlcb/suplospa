@@ -16,16 +16,16 @@ class CreateProductTable extends Migration
         Schema::create('product', function (Blueprint $table) {
              $table->bigIncrements('id_product');
              $table->bigInteger('id_types')->unsigned();
-             $table->bigInteger('id_trademark')->unsigned();
+             $table->bigInteger('id_trademark')->unsigned()->nullable();
              $table->string('sku')->nullable();
              $table->string('name');
              $table->text('image');
-             $table->integer('price')->unsigned();
+             $table->integer('price')->unsigned()->nullable();
              $table->integer('price_comparison');
-             $table->text('short_description')->nullable();
+             $table->text('short_description')->ullable();
              $table->text('long_description')->nullable();
-             $table->integer('quantity')->unsigned();
-             $table->boolean('new');
+             $table->integer('quantity')->unsigned()->nullable();
+             $table->boolean('new')->nullable();
              $table->timestamps();
              $table->foreign('id_types')->references('id_types')->on('product_type');
              $table->foreign('id_trademark')->references('id_trademark')->on('trademark');

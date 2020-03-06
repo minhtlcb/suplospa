@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="{{asset('public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
   <script language="javascript" src="{{asset('public/ckeditor/ckeditor.js')}}"></script>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,9 +47,13 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width:400px;
+  max-width:250px;
+}
+.c1{
+  background-color: red;
 }
   </style>
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -70,8 +76,8 @@
   uiColor: '#d1d1d1'
 });
 </script>
-<script src="{{asset('public/bower_components/jquery/dist/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
+{{-- <script src="{{asset('public/bower_components/jquery/dist/jquery.min.js')}}"></script>
+ --}}<!-- jQuery UI 1.11.4 -->
 <script src="{{asset('public/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
@@ -106,5 +112,41 @@
 <script src="{{asset('public/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('public/dist/js/demo.js')}}"></script>
+    <script type="text/javascript" language="javascript">
+    var x= 0;
+ 
+      // body...
+      $("#themfile").click(function(){
+        
+       if(x<=8){
+          $("#chonfile").append("<input name='image[]' type='file'/>");
+            x +=1;
+         }
+        else
+        {
+          alert('Bạn chỉ có thể thêm 10 ảnh');
+        }
+
+      });
+    $(".themthuoctinh").click(function()
+      {
+         $( ".hides" ).hide();
+         $(".add").append("<tr>"+
+          "<td><input type='text' name='title[]' placeholder='Tên nhóm phân loại'></td>"+
+          "<td><input type='text' name='name2[]' placeholder='Tên phân loại'></td>"+
+          "<td><input type='file' name='image2[]' placeholder='ảnh'></td>"+
+          "<td><input type='text' name='quantity2[]' placeholder='Số lượng'></td>"+
+          "<td><input type='text' name='price2[]' placeholder='Gía bán'></td>"+
+          "</tr>");
+      });
+     $(".c1").live('click',function()
+      {
+       
+        
+      });
+  
+    
+  </script>
 </body>
 </html>
+{{-- Tên thuộc tính:<br/> <input name='title' type='text'/> <br/> Image: <input name='image1' type='file'/> <br/>Quantity :<br/><input name='quantity1' type='text'/> <br/>Gía:<br/><input name='price1' type='text'/> --}}

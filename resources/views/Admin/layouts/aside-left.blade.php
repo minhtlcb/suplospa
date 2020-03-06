@@ -26,7 +26,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU</li>
         <li class="active treeview">
-          <a href="#">
+          <a href="{{url('admin/index')}}">
             <i class="fa fa-dashboard"></i> <span>HOME</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -43,19 +43,19 @@
             <i class="fa fa-files-o"></i>
             <span>QUẢN LÝ</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">5</span>
+              <span class="label label-primary pull-right">12</span>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{url('admin/introduce/get')}}"><i class="fa fa-circle-o"></i>Giới thiệu</a></li>
              <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Slide</a></li>
 
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i>Thương hiệu</a></li>
+            <li><a href="{{url('admin/trademark/get')}}"><i class="fa fa-circle-o"></i>Thương hiệu</a></li>
            
             <li><a href="{{url('admin/service/get')}}"><i class="fa fa-circle-o"></i>Dịch vụ</a></li>
             <li><a href="{{url('admin/type-service/get')}}"><i class="fa fa-circle-o"></i>Loại dịch vụ</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i>Loại sản phẩm</a></li>
-             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Sản phẩm</a></li>
+          <li><a href="{{url('admin/product_type/get')}}"><i class="fa fa-circle-o"></i>Loại sản phẩm</a></li>
+             <li><a href="{{url('admin/product/get')}}"><i class="fa fa-circle-o"></i>Sản phẩm</a></li>
              <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Loại tin tức</a></li>
               <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i>Tin tức</a></li>
 

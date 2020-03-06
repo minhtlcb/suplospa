@@ -19,8 +19,8 @@ class CreatePostTag extends Migration
             $table->integer('id_news')->unsigned();
             $table->foreign('id_news')->references('id_post_tag')->on('news');
 
-            $table->integer('id_tag')->unsigned();
-            $table->foreign('id_tag')->references('id_post_tag')->on('tag');
+            $table->integer('id_tags')->unsigned();
+            $table->foreign('id_tags')->references('id_post_tag')->on('tag');
             $table->timestamps();
 
         });

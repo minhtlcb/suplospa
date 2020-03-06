@@ -8,7 +8,7 @@ class product_type extends Model
 {
     //
      protected $table='product_type';
-     
+     protected $primaryKey = 'id_types';
 
     public function product()
     {

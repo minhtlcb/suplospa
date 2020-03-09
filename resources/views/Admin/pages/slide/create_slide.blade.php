@@ -1,8 +1,9 @@
+  
 @extends('Admin.layouts.master')
 @section('content')
   <div class="content-wrapper">
 
-  <h1>Thêm tin tuyển dụng</h1>
+  <h1>Tạo banner mới</h1>
   <form action="postadd" method="POST" enctype="multipart/form-data">
     {{csrf_field()}}
     @if(count($errors)>0)
@@ -17,12 +18,12 @@
         <b>{{session('thongbao')}}</b>
       </div>
     @endif
-    
-    <p>Tên tuyển dụng</p>
-    <input type="text" name="name"  class="required"  style=" width:100%">
 
-    <p>Tiêu đề</p>
+    <p>Tiêu đề banner</p>
     <input type="text" name="title"  class="required"  style=" width:100%">
+
+    <p>Hình ảnh</p>
+    <input type="file" id="file" name="file" accept="image/*"/>
 
     <p>Nội dung</p>
     <textarea id="textarea" name="describe"></textarea>

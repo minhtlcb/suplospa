@@ -60,6 +60,9 @@ New:<input type="checkbox" name="new">
 <div class="themthuoctinh">
 <a>THÊM THUỘC TÍNH SẢN PHẨM</a>
   </div>
+  <div class="themnhom">
+<a>THÊM NHÓM</a>
+  </div>
   <table class="table">
 <div class="add"></div>
  

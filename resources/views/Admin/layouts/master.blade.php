@@ -114,8 +114,10 @@
 <script src="{{asset('public/dist/js/demo.js')}}"></script>
     <script type="text/javascript" language="javascript">
     var x= 0;
- 
+    var t= 0;
+    var n=0;
       // body...
+     $('.themnhom').hide();
       $("#themfile").click(function(){
         
        if(x<=8){
@@ -128,21 +130,43 @@
         }
 
       });
-    $(".themthuoctinh").click(function()
+
+    $(".themthuoctinh").live('click',function()
       {
+          $('.themnhom').show();
+        if(t<=1)
+        {
+
          $( ".hides" ).hide();
          $(".add").append("<tr>"+
-          "<td><input type='text' name='title[]' placeholder='Tên nhóm phân loại'></td>"+
-          "<td><input type='text' name='name2[]' placeholder='Tên phân loại'></td>"+
+          "<td><input type='text' name='title[]' placeholder='Tên nhóm VD:Màu sắc'></td>"+
+          "<td><div class='add2'></div></td>"+
+          "<td><input type='text' name='name2[]' placeholder='Tên phân loại VD:Vàng'></td>"+
           "<td><input type='file' name='image2[]' placeholder='ảnh'></td>"+
           "<td><input type='text' name='quantity2[]' placeholder='Số lượng'></td>"+
           "<td><input type='text' name='price2[]' placeholder='Gía bán'></td>"+
           "</tr>");
+          t+=1;
+
+       }
+        else if(t==2)
+        {
+          alert('bạn chỉ có thể thêm 2 thuộc tính sản phẩm')
+        }
+
       });
-     $(".c1").live('click',function()
+    $(".themnhom").live('click',function()
       {
+        if(n<1)
+        {
+         $(".add2").append("<input type='text' name='title[]' placeholder='Tên nhóm 2 VD:Size'>");
+          n+=1;
+        }
+        else
+        {
+         alert('Đã thêm')
+        }
        
-        
       });
   
     

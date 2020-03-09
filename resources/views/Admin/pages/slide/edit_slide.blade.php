@@ -3,7 +3,7 @@
   <div class="content-wrapper">
 
     <h1>Sửa</h1>
-    <form action="{{$recruitment->id_category}}" method="POST" enctype="multipart/form-data">
+    <form action="{{$slide->id_slide}}" method="POST" enctype="multipart/form-data">
       {{csrf_field()}}
       @if(count($errors)>0)
         <div class="alert alert-danger">
@@ -17,14 +17,16 @@
           <b>{{session('thongbao')}}</b>
         </div>
       @endif
-      <p>Tên tuyển dụng</p>
-        <input type="text" name="name" value="{{$recruitment->name}}" class="required"  style=" width:100%">
 
-        <p>Tiêu đề</p>
-        <input type="text" name="title" value="{{$recruitment->title}}" class="required"  style=" width:100%">
+        <p>Tiêu đề banner</p>
+        <input type="text" name="title" value="{{$slide->title}}" class="required"  style=" width:100%">
+
+        <p>Hình ảnh</p>
+        <input type="file" id="file" name="file" accept="image/*"/>
+        <img src="../../../public/upload/banner/{{$slide->file}}" style="width: 25%;height: 25%;">
 
         <p>Nội dung</p>
-        <textarea id="textarea" name="describe">{{$recruitment->describe}}</textarea>
+        <textarea id="textarea" name="describe">{{$slide->describe}}</textarea>
 
       <button type="submit" class="btn btn-warning">UPDATE</button>
     </form>

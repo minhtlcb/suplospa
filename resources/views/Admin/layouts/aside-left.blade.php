@@ -48,7 +48,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{url('admin/introduce/get')}}"><i class="fa fa-circle-o"></i>Giới thiệu</a></li>
-             <li><a href="{{url('admin/product/get')}}"><i class="fa fa-circle-o"></i>Slide</a></li>
+             <li><a href="{{url('admin/slide/get')}}"><i class="fa fa-circle-o"></i>Slide</a></li>
 
             <li><a href="{{url('admin/trademark/get')}}"><i class="fa fa-circle-o"></i>Thương hiệu</a></li>
            
@@ -70,14 +70,14 @@
           
           </ul>
         </li>
-        <li>
+      {{--   <li>
           <a href="pages/widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
           </a>
-        </li>
+        </li> --}}
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
@@ -87,10 +87,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i>Đơn hàng</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i>Đang giao</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i>Đã giao</a></li>
-            
+            <li><a href="{{url('admin/order/getorder')}}"><i class="fa fa-circle-o"></i>Đơn hàng</a></li>
+            <li><a href="{{url('admin/order/getorderdelivery')}}"><i class="fa fa-circle-o"></i>Đang giao</a></li>
+            <li><a href="{{url('admin/order/getordercanceled')}}"><i class="fa fa-circle-o"></i>Đơn hủy</a></li>
+
+            <li><a href="{{url('admin/order/getorderdelivered')}}"><i class="fa fa-circle-o"></i>Đã giao</a></li>
           </ul>
         </li>
         <li class="treeview">

@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">
 
-<h1>Tin tuyển dụng</h1>
+<h1>Banner</h1>
 
   @if(session('thongbao'))
     <div class="alert alert-succcess">
@@ -14,8 +14,8 @@
   <thead>
     <tr>
       <th>id</th>
-      <th>Tên công việc</th>
-      <th>Tiêu đề</th>
+      <th>Tiêu đề banner</th>
+      <th>File</th>
       <th>Nội dung</th>
       <th>Thời gian tạo</th>
       <th>Thời gian cập nhập</th>
@@ -23,17 +23,17 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($recruitment as $sr)
+    @foreach($slide as $sr)
     <tr>
-      <td>{{$sr->id_recruitment}}</td>
-      <td>{{$sr->name}}</td>
+      <td>{{$sr->id_slide}}</td>
       <td>{{$sr->title}}</td>
+      <td>{{$sr->file}}</td>
       <td>{{$sr->describe}}</td>
       <td>{{$sr->created_at}}</td>
       <td>{{$sr->updated_at}}</td>
       <td>
-        <a class="btn btn-primary" href="update/{{$sr->id_recruitment}}">Edit</a>
-        <a class="btn btn-danger" href="delete/{{$sr->id_recruitment}}">Delete</a>
+        <a class="btn btn-primary" href="update/{{$sr->id_slide}}">Edit</a>
+        <a class="btn btn-danger" href="delete/{{$sr->id_slide}}">Delete</a>
       </td>
     </tr>
     @endforeach
@@ -42,7 +42,7 @@
 </table>
 <button type="button" class="btn btn-warning"><a href="add">Thêm</a></button>
 
-{{ $recruitment->links() }}
+{{ $slide->links() }}
 </div>
 
 @endsection

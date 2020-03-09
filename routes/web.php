@@ -98,7 +98,7 @@ Route::get('index2','AdminController@index2');
 
            Route::get('delete/{id_product}','ProductController@delete');
      });
-     
+
     Route::group(['prefix' => 'news'], function() {
         Route::get('get', 'NewsController@get');
         Route::post('postadd', 'NewsController@postadd');
@@ -137,6 +137,33 @@ Route::get('index2','AdminController@index2');
         Route::post('update/{id_package}', 'MemPackageController@postupdate');
         Route::get('update/{id_package}', 'MemPackageController@update');
         Route::get('delete/{id_package}', 'MemPackageController@delete');
+    });
+        Route::group(['prefix' => 'slide'], function() {
+        Route::get('get', 'SlideController@get');
+        Route::post('postadd', 'SlideController@postadd');
+        Route::get('add', 'SlideController@add');
+
+        Route::post('update/{id_slide}', 'SlideController@postupdate');
+        Route::get('update/{id_slide}', 'SlideController@update');
+        Route::get('delete/{id_slide}', 'SlideController@delete');
+       });
+
+    Route::group(['prefix' => 'order'], function() {
+        Route::get('getorder', 'OderController@getorder');
+         Route::get('orderdetail/{id_order}', 'OderController@orderdetail');
+    
+
+    
+        Route::get('getordercanceled', 'OderController@getordercanceled');
+         Route::get('getorderdelivery', 'OderController@getorderdelivery');
+        Route::get('getorderdelivered', 'OderController@getorderdelivered');
+       
+
+        Route::get('cancel/{id_slide}', 'OderController@cancel');
+        Route::get('cancel2/{id_slide}', 'OderController@cancel2');
+        Route::get('handlingdelivery/{id_order}', 'OderController@handlingdelivery');
+        Route::get('handlingdelivered/{id_order}', 'OderController@handlingdelivered');
+     
     });
 });
 

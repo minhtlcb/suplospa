@@ -10,10 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\service;
+// ->middleware('verified')
+
+Auth::routes(['verify' => true]);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login','HomeController@login')->name('login');
+Route::get('/register','HomeController@register');
+Route::post('/login','HomeController@postlogin');
+Route::post('/register','HomeController@postregister');
+Route::get('/verify/{token}', 'VerifyController@VerifyEmail')->name('verify');
 Route::group(['prefix'=>'admin'],function()
 {
 Route::get('index','AdminController@index');
@@ -161,8 +170,18 @@ Route::get('index2','AdminController@index2');
 
         Route::get('cancel/{id_slide}', 'OderController@cancel');
         Route::get('cancel2/{id_slide}', 'OderController@cancel2');
+
         Route::get('handlingdelivery/{id_order}', 'OderController@handlingdelivery');
         Route::get('handlingdelivered/{id_order}', 'OderController@handlingdelivered');
+     
+    });
+
+    Route::group(['prefix' => 'user'], function() {
+        Route::get('get', 'UserController@get');
+         Route::post('search', 'UserController@search');
+    
+
+    Route::post('update','UserController@update');
      
     });
 });

@@ -1,0 +1,27 @@
+#back-wrapper5 .back-w-img {
+    max-width: 50%;
+    background: url(http://file.hstatic.net/1000185703/file/videobg-start.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.iconcolor {
+	color: white;
+	font-size: 14px;
+	padding: 0 5px;
+}
+.iconcolor a {
+	text-decoration: none;
+	color: white;
+}
+.headertwo {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	background: rgba(0 ,0 ,0 ,0.5);
+	z-index: 100;
+}

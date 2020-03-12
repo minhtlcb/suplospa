@@ -66,7 +66,7 @@
 
             <li><a href="{{url('admin/recruitment/get')}}"><i class="fa fa-circle-o"></i>Tuyển dụng</a></li>
 
-
+          <li><a href="{{url('admin/user/get')}}"><i class="fa fa-circle-o"></i>Quản lý User</a></li>
           
           </ul>
         </li>

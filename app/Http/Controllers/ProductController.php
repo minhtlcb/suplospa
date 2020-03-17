@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\trademark;
 use App\product_type;
 use App\image_product;
+use Session;
 class ProductController extends Controller
 {
     //
@@ -250,4 +251,121 @@ catch(Exception $e) {
     	$product->delete();
     	return redirect('admin/product/get')->with('thongbao','Bạn đã xóa thành công');
     }
+
+
+
+    public function product()
+    {
+      $trademark =trademark::all();
+      $product_type=product_type::all();
+
+
+      
+      
+
+
+
+
+
+
+      $product = product::where('new',1)->orwhere('new',0)->orderBy('new', 'desc')->limit(12)->get();
+
+   
+
+
+
+
+
+
+      return view('Home.pages.product.product',['product'=>$product,'trademark'=>$trademark,'product_type'=>$product_type]);
+    }
+    
+      public function productdetails($id_product)
+    {
+       // Session::flush();
+      $product = product::find($id_product);
+      $relate=product::where('id_types',$product->product_type->id_types)->where('id_product','<>',$id_product)->limit(4)->get();
+
+
+          $view = Session::get('view');
+                        $view[] = array
+                                  (
+                                      'id'=>$product->id_product,
+                                  );
+                                   Session::put('view', $view);
+                         $n=count($view);
+                         if($n>4)
+                         {
+                              foreach ($view as $id => $val) 
+                                 {
+                                  foreach ($val as $key) {
+                                    # code...
+                                  
+                                 
+                                  unset($view[$id]);
+                                  Session::put('view', $view);
+                                
+$viewed_products=product::where('id_product',$id_product);
+     // $listing = Listing:where('id', $id);
+   foreach ($view as $key => $value) {
+     //$i++;
+     // ->where('field_1', red_1); // Desired output
+    {
+    foreach ($value as $val)
+     {
+     $viewed_products->orwhere('id_product',$value);
+    }
+  }
+     
+}
+$results = $viewed_products->get();
+
+
+
+      return view('Home.pages.product.productdetails',['product'=>$product,'relate'=>$relate,'view'=>$results]);
+    
+                                }
+                                return;
+                              
+                                 }  
+
+                        }
+                        else
+                        {
+                     
+
+$viewed_products=product::where('id_product',$id_product);
+     // $listing = Listing:where('id', $id);
+   foreach ($view as $key => $value) {
+     //$i++;
+     // ->where('field_1', red_1); // Desired output
+    {
+    foreach ($value as $val)
+     {
+     $viewed_products->orwhere('id_product',$value);
+    }
+  }
+     
+}
+$results = $viewed_products->get();
+
+
+
+      return view('Home.pages.product.productdetails',['product'=>$product,'relate'=>$relate,'view'=>$results]);
+    }
+  }
+    public function search()
+    {
+     
+
+
+     $cat = Input::get('categories');
+
+    $cat = (int) $cat;
+
+    $vacancies = trademark::where('id_trademark', '=', $cat)->get();
+
+    return View::make('Home.pages.product.product')->with('trademark', $vacancies); 
+    }
+    
 }

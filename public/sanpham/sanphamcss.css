@@ -1,0 +1,578 @@
+		
+        ::selection{
+            background-color: violet;
+            color: white;
+        }
+        .header{
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .header-top{
+            width: 100%;
+            height: 36px;
+            background-color: #ff789e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-top-{
+            margin: 0 3% !important; 
+        }
+        .header-top- a{
+            text-decoration: none;
+            color: white;
+            margin-right: 10px;
+        }
+        .header-top- a:hover{
+            color: yellow;
+        }
+        .header-bot{
+            height: 100px;
+            background-color: orange;
+        }
+
+        .abcxyz {
+            
+            /*position: relative;*/
+            /*align-items: center;
+            justify-content: center;*/
+
+        }
+        
+        .text-light {
+            color: #fff;
+        }
+        
+        .contentlogin {
+            margin: auto;
+            /*margin: auto;
+            width: 100%;*/
+            /*position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);*/
+        }
+        .contentlogin_top h1{
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+        .btn-hoivien{
+            background-color: #ff789e;
+            border: none;
+            width: 100px;
+            height: 40px;
+
+        }
+        .fa-shopping-cart{
+            width: 40px;
+            height: 40px;
+            border: 1px dashed #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .nav-link:hover{
+            color: blue !important;
+        }
+        
+        .abcxyz {
+            background-image: url(../img/banner-suplo.webp);
+            /*background-attachment: fixed;*/
+            /*position: relative;*/
+             background-repeat: no-repeat;
+             height: 290px; 
+             background-color:red;
+             /*background-size: 100% !important;*/
+             display: flex;
+        }
+        @media only screen and (max-width: 900px) {
+            .header-top{
+    display: none !important;
+}
+}
+        .contentlogin_top h1 {
+            color: white;
+            font-size: 26px;
+        }
+        
+        .contentlogin_bot ul {
+            display: flex;
+            list-style: none;
+            color: white;
+            padding: 0 16px;
+        }
+        
+        .contentlogin_bot ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .contentlogin_bot ul li a:hover {
+            color: red;
+        }
+        
+        .sanpham-left {
+            height: auto;
+            background-color: white;
+        }
+        
+        .sanpham-left input {
+            width: 256px;
+            height: 40px;
+            border: 1px solid #ff789e;
+        }
+        
+        .sanpham-left button {
+            background-color: #ff789e;
+            border: none;
+        }
+        
+        .sanpham-right {
+            /*height: 500px;
+            background-color: #ccc;*/
+            background-color: white;
+        }
+        
+        .sanpham-right h3 {
+            color: #ff789e;
+            margin-top: 15px;
+            font-size: 24px;
+        }
+        
+        .search {
+            display: flex;
+        }
+        .search button i{
+            width: 45px;
+            color: white;
+        }
+        
+        @media only screen and (max-width: 900px) {
+            .search input {
+                width: 100%;
+            }
+            .content-sp .find-show button i {
+                /* padding-left: 100%;*/
+                /*justify-content: flex-end;*/
+            }
+            .all-img-sp {
+                display: none;
+            }
+            .timtheo {
+                width: 100% !important;
+            }
+            .fiterr {
+                width: 100% !important;
+            }
+            .img img {
+                width: 100% !important;
+                margin-top: 10px;
+            }
+        }
+        
+        .timtheo {
+            width: 256px;
+            height: 44px;
+            background-color: #ff789e;
+            margin-top: 30px;
+        }
+        /*.thuonghieu{
+            width: 256px;
+            height: 60px;
+            background-color: #000;
+        }
+        .loai{
+            width: 256px;
+            height: 60px;
+            background-color: #555;
+        }
+        .khoanggia{
+            width: 256px;
+            height: 60px;
+            background-color: #585;
+        }*/
+        
+        .timtheo h2 {
+            color: white;
+            font-size: 22px;
+            padding-left: 15px;
+            padding-top: 8px;
+        }
+        
+        .fiterr {
+            width: 256px;
+            height: 60px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .fiterr h3 {
+            color: #000;
+            font-size: 20px;
+            padding-left: 15px;
+            padding-top: 21px;
+        }
+        
+        .fiterr button {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .fiterr button:hover {
+            background-color: rgba(0, 0, 0, 0.0);
+            border: none;
+        }
+        
+        button:focus {
+            outline: none !important;
+        }
+        
+        .btn-primary:focus {
+            background-color: none !important;
+        }
+        
+        .thuonghieucon {
+            width: 256px;
+            height: 100px;
+            background-color: blue;
+            /*display: none;*/
+        }
+        
+        .loaicon {
+            width: 256px;
+            height: 100px;
+            background-color: red;
+        }
+        
+        .khoanggiacon {
+            width: 256px;
+            height: 100px;
+            background-color: yellow;
+        }
+        
+        .content-sp {
+            margin-top: 50px;
+           
+            height: auto;
+        }
+        
+        .content-sp .find-show button i {
+            /*text-align: right;*/
+            /* padding-left: 100%;
+           position: relative;
+           bottom: 10px;*/
+            /*justify-content: flex-end;*/
+            float: right;
+        }
+        
+        .content-sp .find-show button a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .sanpham-content-ul-li {
+            background-color: #888;
+            width: 246px;
+            height: 358px;
+            float: left;
+            border: 1px solid red;
+            list-style: none;
+            margin-right: 5px;
+            margin-top: 10px;
+        }
+        
+        .panell {
+            display: flex;
+            /*justify-content: space-between;*/
+        }
+        
+        .checkk {
+            /*padding: 10px 5px !important;*/
+            width: 15px !important;
+            height: 15px !important;
+            /*margin-top: 5px;*/
+            margin: 6px 10px 0 0;
+        }
+    
+        .allsp {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sanphamcon {
+            /*min-width: 270px;*/
+            width: 246px;
+            height: 395px;
+            margin-bottom: 20px;
+            /*margin: 0 20px;*/
+            /*width: 550px !important;*/
+            /*margin: 20px 45px 0 45px;*/
+            padding: 0 30px;
+            padding-top: 20px;
+            border: 2px solid white;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        
+        .giamgia {
+            background: red;
+            position: absolute;
+            border: 1px solid red;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            z-index: 1;
+            top: 5px;
+            left: 0;
+            /*align-items: center;*/
+            display: flex;
+            /*justify-content: center;*/
+            color: white;
+            font-size: 10px;
+        }
+        
+        .giamgia p {
+            margin: auto;
+        }
+        
+        .moi p {
+            margin: auto;
+        }
+        
+        .moi {
+            background: #FEA342;
+            position: absolute;
+            border: 1px solid #FEA342;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            z-index: 1;
+            top: 5px;
+            left: 35px;
+            /*align-items: center;*/
+            display: flex;
+            /*justify-content: center;*/
+            color: white;
+            font-size: 10px;
+        }
+        
+        .sanphamcon img {
+            transition: transform .2s;
+        }
+        
+        .sanphamcon img:hover {
+            -ms-transform: scale(1.1);
+            /* IE 9 */
+            -webkit-transform: scale(1.1);
+            /* Safari 3-8 */
+            transform: scale(1.1);
+        }
+        
+        .sanphamcon:hover {
+            /*display: inline;*/
+            border: 2px solid #ccc;
+        }
+        
+        .sanphamcon button {
+            opacity: 0;
+            transition: 0.5s ease;
+            width: 100px;
+            height: 40px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+        .sanphamcon button a {
+            opacity: 1;
+            transition: 0.5s ease;
+            font-size: 15px;
+        }
+        
+        .sanphamcon:hover button {
+            position: relative;
+            bottom: 10px;
+            background-color: #ff789e;
+            color: white;
+            border: none;
+            /*display: inline;*/
+            opacity: 1;
+            margin: 0 10px;
+            width: 100px;
+            height: 40px;
+        }
+        
+        .buttonsp {
+            position: relative;
+            /*top:40px;*/
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            margin-top: 31px !important;
+        }
+        .buttonsp a{
+            width: 98px;
+            text-decoration: none;
+            line-height: 40px;
+        }
+        .btn-chitiet a{
+            color: #ff789e;
+            font-weight: bold;
+        }
+        .muangayy a{
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-chitiet {
+            background-color: white!important;
+            border: 1px solid #ff789e !important;
+            color: #ff789e!important;
+        }
+         
+        
+        .btn-chitiet:hover a{
+            color: white;
+        }
+        .btn-chitiet:hover {
+            background-color: #ff4579 !important;
+            border: 1px solid #ff4579 !important;
+            color: white;
+
+        }
+        
+        .muangayy:hover {
+            background-color: #ff4579 !important;
+            border: 1px solid #ff4579 !important;
+            color: white !important;
+        }
+        
+        .tensp h1 {
+            max-width: 100%;
+            margin-top: 5px;
+            height: 60px;
+            overflow: hidden;
+            /*background-color: red;*/
+            line-height: 27px;
+            font-size: 20px;
+        }
+        
+        .giasp {
+            /*background-color: yellow;*/
+            color: #ff789e;
+            text-align: center;
+            margin-bottom: 20px;
+            /*display: flex;*/
+        }
+        .giasp h2{
+            font-size: 18px;
+        }
+        .giasp h2 del {
+            font-size: 13px !important;
+            color: black;
+        }
+        /* Style the buttons that are used to open and close the accordion panel */
+        
+        .accordion {
+            background-color: white !important;
+            color: black !important;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            /*border: none;*/
+            outline: none;
+            transition: 0.4s;
+            border: 1px solid #ccc !important;
+        }
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+        /* Style the accordion panel. Note: hidden by default */
+        
+        .panel {
+            padding: 0 18px;
+            background-color: white !important;
+            display: none;
+            overflow: hidden;
+            border: 1px solid #ccc !important;
+        }
+        
+        .fitter-list-price {
+            display: flex;
+            margin-left: 40px;
+        }
+        
+        .fitter-list-price input {
+            margin: 0;
+            padding: 0;
+            width: 15px;
+            height: 15px;
+            position: relative;
+            left: -40px;
+            top: 10px;
+        }
+        
+        .fitter-list-price label span {
+            left: -30px;
+            top: 7px;
+            position: relative;
+            font-size: 15px !important;
+        }
+        
+        .img-sp-left {
+            background-color: red;
+            background-image: url(../img/sanphamleft);
+            background-size: 100%;
+            width: 100%;
+            height: 250px;
+        }
+        
+        .img-sp-right {
+            background-color: red;
+            background-image: url(../img/sanphamleft1.webp);
+            background-size: 100%;
+            width: 100%;
+            height: 250px;
+        }
+        
+        .fitter-list-price label input [type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+        
+        .fa-minus {
+            display: none;
+        }
+         .accordion:active{
+            background-color: orange!important;
+        }
+        /**/
+        
+       /* .asss:focus .fa-minus {
+            display: block !important;
+        }
+        
+        .asss:focus .fa-plus {
+            display: none !important;
+        }*/
+        
+        .hihihi:active {
+            background-color: orange !important;
+        }
+        .footer-qwerty{
+           background-image: url(../img/footer.webp);
+           /*background-size: 100% !important;*/
+           /*background-attachment: fixed;*/
+           height: 330px;
+           background-repeat: no-repeat;
+
+        }

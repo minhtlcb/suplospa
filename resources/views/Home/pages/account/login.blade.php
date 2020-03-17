@@ -37,12 +37,12 @@
     </div> 
     <div class="form-group"> <input class="form-control" name="password" placeholder="Password" id="login-pass" type="password"> 
     </div> 
-    <div class="checkbox"> <label><input type="checkbox"> Ghi nhớ </label> 
+   {{--  <div class="checkbox"> <label><input type="checkbox"> Ghi nhớ </label>  --}}
     </div> 
     <br> <input class="btn btn-info" type="submit" value="Đăng Nhập"> 
-    <br> <a href="San_pham.html"><small>Trở về</small>
-    <br> <a href="register.html"><small>Đăng kí</small></a>   
-    <br> <a href="resetpassword.html"><small>Quên mật khẩu</small></a>
+    {{-- <br> <a href=""><small>Trở về</small> --}}
+    <br> <a href="register"><small>Đăng kí</small></a>   
+    <br> <a href="resetpassword"><small>Quên mật khẩu</small></a>
     </div> 
   </div>
   <div class="col-md-4">

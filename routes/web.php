@@ -11,18 +11,23 @@
 |
 */
 // ->middleware('verified')
-
+use Illuminate\Http\Request;
 Auth::routes(['verify' => true]);
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('')->name('home');
 Route::get('/login','HomeController@login')->name('login');
 Route::get('/register','HomeController@register');
 Route::post('/login','HomeController@postlogin');
 Route::post('/register','HomeController@postregister');
 Route::get('/verify/{token}', 'VerifyController@VerifyEmail')->name('verify');
+
+Route::get('/resetpassword','HomeController@resetpassword');
+Route::post('/resetpassword','HomeController@serchmail');
+Route::get('/verifypass/{token}', 'VerifypassController@verifypass')->name('verifypass');
 Route::group(['prefix'=>'admin'],function()
 {
 Route::get('index','AdminController@index');
@@ -185,6 +190,122 @@ Route::get('index2','AdminController@index2');
      
     });
 });
+////////GIAO DIÊN HOME
+Route::get('product','ProductController@product')->name('product');
+route::get('/productdetails/{id_product}','ProductController@productdetails');
+Route::post('/search','ProductController@search');
+
+route::get('test',function()
+{
+
+//   $viewed_products='a';
+//      // $listing = Listing:where('id', $id);
+//    for($i=0;$i<4;$i++)
+//    {
+//   echo  $i++;
+//      $viewed_products.$i.'b';
+//    }
+    
+  
+     
+// $results = $viewed_products;
+// echo $results;
+     //Session::flush();
+   $cart = Session::get('cart');
+   $cart[] = array
+         (
+           'id'=>4,
+          );
+  
+   Session::put('cart', $cart);
+    
+      
+
+        $n=count($cart);
+         echo 'Tổng'.$n.':';
+       
+
+                foreach ($cart as $id => $val) 
+             {
+    
+              echo $id.'>';
+
+            //    unset($cart[$id]);
+            // Session::put('cart', $cart);
+          
+              foreach ($val as $key) 
+              {
+                 echo $key.'    '  ; 
+
+                     if($n >3)
+                 {
+               //array_shift($cart);
+                unset($cart[$id]);
+            Session::put('cart', $cart);
+            if($n==4)
+            {
+             return;
+             }
+
+               }
+            }
+        //break; 
+                 
+                }
+
+            
+//         foreach ($val as $key) 
+//         {
+//            echo $key.'    '  ; 
+
+//                      if($n >3)
+//                  {
+//                //array_shift($cart);
+//                 unset($cart[$id]);
+//             Session::put('cart', $cart);
+//             // return;
+//                  }
+       
+        
+//     }
+      
+
+     
+        
+    
+        //     for($i=0;$i<$n-1;$i++)
+        //     {
+        //      for($j=$i+1;$j<$n;$j++)
+        //      {
+        //         if($c[$i]>$c[$j])
+        //         {
+        //             $tg=$c[$i];
+        //             $c[$i]=$c[$j];
+        //             $c[$j]=$tg;
+        //         }
+        //      }
+        // }
+            //   for ($i = 0; $i < $n; $i++)
+            // {
+            //     echo $c[$i];
+            // }
+        
+        
+       
+       //Session::flush();
+       
+
+});
+
+
+
+
+
+
+
+route::get('trademark/{}')->name('trademark');
+route::get('product_type/{}')->name('product_type');
+
 
 
 // Route::get('thu',function()

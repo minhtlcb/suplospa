@@ -44,7 +44,7 @@ Loại dịch vụ:
   <input type="file" name="image[]" style=" width:100%"></div>
  <div id='themfile'><a>THÊM FILE</a></div>
 
-<p>Mô tả ngắn</p>  <textarea id="textarea[]" name="short_description"  style=" width:100%"></textarea>
+<p>Mô tả ngắn</p> <textarea id="textarea[]" name="short_description"  style=" width:100%"></textarea>
 <p>Mô tả chi tiết</p><textarea id="textarea" name="long_description"></textarea>
 <div class="hides"><p>Gía</p><input type="number" name="price" size="1" value="0" min="0"  style=" width:100%"></div>
 
@@ -54,7 +54,6 @@ Loại dịch vụ:
 New:<input type="checkbox" name="new">
 <p>Giảm giá</p>
 <input type="number" name="discount" size="1" value="0" min="0" >
-
 
 
 <div class="themthuoctinh">
@@ -83,3 +82,5 @@ New:<input type="checkbox" name="new">
   
 
   @endsection
+
+  

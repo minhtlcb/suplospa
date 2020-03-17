@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Frontend\Auth;
 namespace App\Http\Controllers;
 use App\Mail\VerificationEmail;
+use App\Mail\VerificationpassresetEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -11,11 +12,11 @@ class HomeController extends Controller
     //
     public function login()
     {
-    	return view('Home.pages.login');
+    	return view('Home.pages.account.login');
     }
     public function register()
     {
-    	return view('Home.pages.register');
+    	return view('Home.pages.account.register');
     }
      public function postlogin(Request $Request)
     {
@@ -113,6 +114,40 @@ class HomeController extends Controller
               {
                 return redirect('login')->with('thongbao','Đăng ký k thành công');
               } 
+    }
+    public function resetpassword()
+    {
+        return view('Home.pages.account.resetpassword');
+    }
+    public function serchmail(Request $Request)
+    {
+        $this->validate($Request,
+                 [
+                    'email' => 'required|email|max:255',
+                ],
+                [
+           
+                    'email.required' => 'Hãy nhập vào địa chỉ Email',
+                    'email.email' => 'Địa chỉ Email không đúng định dạng',
+                    'email.max' => 'Địa chỉ Email tối đa 255 ký tự',
+                ]
+            );
+
+           
+                $user =User::where('email',$Request->email)->first();
+                
+               $user->remember_token= Str::random(50);
+            
+                $user->save();
+                $lastInsertedId = $user->id;
+                $thisUser = User::findOrFail($lastInsertedId);
+              \Mail::to($thisUser['email'])->send(new VerificationpassresetEmail($thisUser));
+
+                return redirect('login')->with('thongbao','Gửi mã thành công-Vui lòng kiểm tra mail để đổi mật khẩu');
+             
+          
+
+
     }
 }
 

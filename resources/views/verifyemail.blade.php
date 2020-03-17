@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<title>Kích hoạt tài khoản</title>
 <body>
 	
 <p>Chào {{$user->name }}</p>

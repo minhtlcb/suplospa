@@ -41,7 +41,7 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+ 
   <style type="text/css">
     td {
   white-space: nowrap;
@@ -171,6 +171,8 @@
   
     
   </script>
+ 
+  @yield('script')
 </body>
 </html>
 {{-- Tên thuộc tính:<br/> <input name='title' type='text'/> <br/> Image: <input name='image1' type='file'/> <br/>Quantity :<br/><input name='quantity1' type='text'/> <br/>Gía:<br/><input name='price1' type='text'/> --}}

@@ -25,12 +25,53 @@ class CartController extends Controller
     {
       $product=product::find($id_product);
         $cart = Session::get('cart');
+      
+
           $cart[$product->id_product]= array(
-        // 'id'=>3,
              'quantity'=>$quantity
             );
-            Session::put('cart',$cart);
-            echo 'd';
+            
+        if($quantity==0 || $quantity<0 )
+        {
+        unset($cart[$id_product]);
+        Session::put('cart',$cart);
+        }
+        Session::put('cart',$cart);
+           
+
+
+
+
+
+
+
+       $cart = Session::get('cart');
+
+                  if(isset($cart))
+                    {
+                    $productcart=product::where('id_product','<>',);
+                     // $listing = Listing:where('id', $id);
+                  
+                   foreach ($cart as $key => $value) 
+                     //$i++;
+                     // ->where('field_1', red_1); // Desired output
+                    {
+                    // foreach ($value as $va => $quantity)
+                    //  {
+                      // echo $key;
+                     $productcart->orwhere('id_product',$key);
+                    // }
+                  }
+                     
+
+                $results = $productcart->get();
+
+
+
+                      return view('ajax',['cart'=>$results,'sessioncart'=>$cart]);
+
+                           
+                       }
 
     }
 

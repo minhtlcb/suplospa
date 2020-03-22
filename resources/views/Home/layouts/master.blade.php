@@ -125,9 +125,19 @@ e.preventDefault();
 
 
 $(document).on('click', '.qty-plus', function () {
-   $(this).prev().val(+$(this).prev().val() + 1);
-});
-$(document).on('click', '.qty-minus', function () {
+  var tt = $(this).next().val();
+      if($(this).prev().val()<tt)
+         {
+         $(this).prev().val(+$(this).prev().val() + 1);
+        }
+else
+{
+   $(this).prev().val(tt);
+   alert('Số lượng sản phẩm chỉ còn '+tt);
+}
+ });
+
+  $(document).on('click', '.qty-minus', function () {
    if ($(this).next().val() > 0) 
     $(this).next().val(+$(this).next().val() - 1);
 
@@ -137,26 +147,29 @@ $(document).on('click', '.qty-minus', function () {
 
 $(document).ready(function()
 {
-  $(document).on('click', '.qty-plus', function () {
-  var quantity=$(this).prev().val();
-  var id_product=$('input').prev('#id_product').val();
-   $.get('ajax/cart/'+id_product+'/'+quantity,function(data)
-      {
-        $('#cart').html(data);
-      })
- 
-});
+       $(document).on('click', '.qty-plus', function () {
+      var quantity=$(this).prev().val();
+      var id_product=($(this).prev().prev().prev().val());
+
+       $.get('ajax/cart/'+id_product+'/'+quantity,function(data)
+          {
+            $('#cart').html(data);
+          });
+    
+         });
 
 
-        $('.qty-minus').on('click', function () {
+
+
+             $(document).on('click','.qty-minus', function () {
       var quantity=$(this).next().val();
-      var id_product=$('input').prev('#id_product').val();
-      $.get('ajax/cart/'+id_product+'/'+quantity,function(data)
-      {
-        alert(data);
-      })
- 
-});
+      // var id_product=$('input').prev('#id_product').val();
+      var id_product=($(this).prev().val());
+         $.get('ajax/cart/'+id_product+'/'+quantity,function(data)
+        {
+          $('#cart').html(data);
+        });
+      });
 
 });
 

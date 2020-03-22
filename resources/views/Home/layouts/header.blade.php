@@ -220,8 +220,17 @@
            <div class="a">
             <input type="hidden" name="id_product" value="{{$value->id_product}}" id="id_product">
    <input type="button" value="-" class="qty-minus">
+
+
+
    <input type="number" name="quantity" value="{{$va}}" id="qty" >
+
+    @php
+ $sumprice+=(($va*($value->price))*(100-$value->discount))/100
+ @endphp
+
    <input type="button" value="+" class="qty-plus">
+ <input type="hidden"  value="{{$value->quantity}}" id="totalquantity">
 </div>
 
           @endforeach
@@ -243,7 +252,7 @@
        
 
 
-                                    <div class="price-sp">{{number_format(($va*$value->price),0,",",".")}}đ</div>
+                                    <div class="price-sp">{{number_format((($va*$value->price)*(100-$value->discount)/100),0,",",".")}}đ</div>
                                    
                                     </div>
                                 </ul>
@@ -257,7 +266,7 @@
                                 <textarea class="form-textarea" placeholder="Nội dung" style="height:100px;"> </textarea>
                                 <div class="tongtien">
                                   <li class="price-sp" >Tổng Tiền</li>
-                                  <li class="price-sp">135,000₫</li>
+                                  <li class="price-sp">{{number_format(($sumprice),0,",",".")}}đ</li>
                                 </div>
                                 <input type="button" class="thanhtoan" name="" value="Thanh Toán">
                                

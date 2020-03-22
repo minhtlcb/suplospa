@@ -46,7 +46,7 @@ $results = $productcart->get();
 
 
 
-      view()->share(['cart'=>$results,'sessioncart'=>$cart]);
+      view()->share(['cart'=>$results,'sessioncart'=>$cart,'sumprice'=>0]);
 
            
 }

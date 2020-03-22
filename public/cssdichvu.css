@@ -1,0 +1,230 @@
+/* banner */
+.abcxyz {
+    height: 300px;
+    padding: 30px 0;
+   background: url(./img/banner-suplo.webp) !important;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+      
+ }
+ .abcxyz_tensp{
+    color: white;
+    text-transform: lowercase;
+}
+
+.hoverbanner:hover{
+    color: orange;
+}
+.contentlogin_top h1 {
+    color: white;
+    font-size: 26px;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+@media only screen and (max-width:900px){
+    .abcxyz{
+        background-attachment: unset !important;
+    }
+}
+/* banner */
+
+
+
+.row{
+    margin: 20px 0 0 0;
+}
+/* <!-- Dịch vụ title --> */
+.title-service{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.title-service h1{
+    font-size: 22px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-bottom: 20px;
+}
+.title-service p{
+    margin: 0 15%;
+    text-align: center;
+}
+/* <!-- Dịch vụ title --> */
+
+/* <!-- dịch vụ content --> */
+.title{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 50px 0px 0px 0px;
+
+}
+.bio {
+	text-align: justify !important;
+	
+	font-size: 14px;
+	margin: 0 0 15px;
+}
+.img1 {
+	max-width: 100%;
+    padding: 0px 0px;
+    transition: 0.5s;
+}
+.title2 {
+	text-transform: uppercase;
+	padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+.bio2 {
+	font-size: 13px;
+   
+    text-overflow: ellipsis;
+   
+}
+.btnxt {
+	background-color: #ff789e;
+	color: white;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding: 10px 25px;
+	margin: 10px 0;
+	border:none;
+}
+.btnxt:hover {
+	background-color: #ff4579;
+	color: white;
+}
+.btnxemthem{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.service-wrapper a{
+    text-decoration: none;
+}
+.service-wrapper{
+    margin-top: 20px;
+    
+}
+.baoquanh{
+    box-shadow: 0 0 30px rgba(24, 17, 17, 0.2);
+    overflow: hidden;
+}
+.baoquanh:hover{
+    box-shadow: 0 0 30px violet;
+}
+.baoquanh-content{
+    text-align: center;
+}
+.baoquanh-content-2{
+    margin: 0 15px;
+}
+.img1:hover{
+    webkit-transform: scale(1.1);
+    transform: scale(1.1);  
+}
+/* <!-- dịch vụ content --> */
+
+/* logo thương hiệu */
+.section__logothuonghieu{
+    background: #ff789e;
+    width: 100% !important;  
+}
+.link__thuonghieu{
+    height: 150px;
+    line-height: 150px;
+}
+@media only screen and (max-width:768px){
+    .footer--content--4{
+        margin-bottom: 30px;
+    }
+    .last__footer-2-2{
+        width: 50%!important;
+    }
+    .link__thuonghieu {
+        width: 50%!important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .section__logothuonghieu{
+        height: 150px; 
+    }
+}
+/* logo thương hiệu */
+
+/* footer */
+.footer_tintuc{
+    background:     url(../img/footer.webp);
+    padding: 50px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+
+}
+
+.footer_tintuc a{
+    color: #fff;
+
+}
+.footer_tintuc a:hover{
+    color:#ff789e;
+    text-decoration: none;
+}
+.footer_list{
+    list-style-type: none;
+    padding: 0px;
+}
+.footer_tintuc h3{
+    font-size: 18px;
+    font-weight: 700px;
+    text-transform: uppercase;
+    font-family: 'Trade Winds', cursive;
+}
+.footer__dangki--chitiet,
+.footer__giomocua--chitiet{
+    margin-bottom: 15px;
+}
+.footer__container__input{
+    height: 40px;
+    display: flex;
+
+}
+.footer__container__input input{
+        text-align: center;
+    height: 100%;
+flex: 2;
+    border: none;
+    outline: none;
+}
+.footer__container__input button{
+        background: #ff789e;
+    border: none;
+    flex: 1;
+    height: 40px;
+    outline: none;
+}
+.footer_list li a{
+    color: white;
+}
+.footer__telephone a{
+    color: white;
+}
+.footer-all-social-network a{
+    margin-right: 15px;
+    margin-top: 5px;
+    color: white;
+    font-size: 20px;
+}
+/* footer */
+

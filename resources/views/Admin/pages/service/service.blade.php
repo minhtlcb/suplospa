@@ -13,6 +13,7 @@
 	<thead>
 		<tr>
 			<th>id</th>
+			
 			<th>Tên dịch vụ</th>
 			<th>Mô tả</th>
 			<th>Delete</th>
@@ -23,6 +24,7 @@
 		@foreach($service as $sr)
 		<tr>
             <td>{{$sr->id_service}}</td>
+
 			<td>{{$sr->name}}</td>
 			<td class="des">{{$sr->describe}}</td>
 			<td><a href="delete/{{$sr->id_service}}">Delete</a></td>

@@ -117,7 +117,7 @@ try{
            {
             $file = $Request->file('image');
             $format= $file->getClientOriginalExtension();
-            if($format != 'jpg' && $format != 'png' && $format != 'jpeg' && $format !='mp4')
+            if($format != 'jpg' && $format != 'png' && $format != 'jpeg' && $format !='mp4' && $format !='PNG')
             {
                return redirect('admin/typeservice/get')->with('thongbao','bạn chỉ được chọn file jpg,png,jpeg,mp4');
             }

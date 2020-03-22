@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\User;
+use App\product;
+use App\introduce;
+use App\membership_pakage;
+use App\type_service;
+use App\news;
+use App\service;
 class HomeController extends Controller
 {
     //
@@ -16,6 +22,7 @@ class HomeController extends Controller
     }
     public function register()
     {
+       
     	return view('Home.pages.account.register');
     }
      public function postlogin(Request $Request)
@@ -148,6 +155,34 @@ class HomeController extends Controller
           
 
 
+    }
+
+
+    public function index()
+    {
+
+        
+
+        $type_service=type_service::limit(6)->get();
+        $news = news::orderBy('id_news', 'asc')->limit(1)->get();
+        
+        $membership_pakage=membership_pakage::limit(3)->get();
+     $product = product::where('new',1)->orwhere('new',0)->orderBy('new', 'desc')->limit(4)->get();
+      $introduce=introduce::all();
+        return view('Home.pages.home.index',['introduce'=>$introduce,'product'=>$product,'membership_pakage'=>$membership_pakage,'type_service'=>$type_service,'news'=>$news]);
+    }
+    public function introduce()
+    {
+        return view('Home.pages.introduce');
+    }
+      public function contact()
+    {
+        return view('Home.pages.contact');
+    }
+    
+   public function recruitment()
+    {
+        return view('Home.pages.recruitment');
     }
 }
 

@@ -282,7 +282,7 @@ catch(Exception $e) {
     
       public function productdetails($id_product)
     {
-       // Session::flush();
+        //Session::flush();
       $product = product::find($id_product);
       $relate=product::where('id_types',$product->product_type->id_types)->where('id_product','<>',$id_product)->limit(4)->get();
 
@@ -294,20 +294,23 @@ catch(Exception $e) {
                                   );
                                    Session::put('view', $view);
                          $n=count($view);
-                         if($n>4)
-                         {
-                              foreach ($view as $id => $val) 
+                      // echo $n;
+                          foreach ($view as $id => $val) 
                                  {
-                                  foreach ($val as $key) {
+                                 
                                     # code...
                                   
-                                 
-                                  unset($view[$id]);
+                                  if($n>4)
+                                 {
+                            
+                           
+                                   unset($view[$id]);
+
                                   Session::put('view', $view);
                                 
 $viewed_products=product::where('id_product',$id_product);
      // $listing = Listing:where('id', $id);
-   foreach ($view as $key => $value) {
+   foreach ($view as $key => $value) 
      //$i++;
      // ->where('field_1', red_1); // Desired output
     {
@@ -317,26 +320,26 @@ $viewed_products=product::where('id_product',$id_product);
     }
   }
      
-}
+
 $results = $viewed_products->get();
 
 
 
       return view('Home.pages.product.productdetails',['product'=>$product,'relate'=>$relate,'view'=>$results]);
     
-                                }
-                                return;
+                               
                               
-                                 }  
+                                   
 
-                        }
+                        
+                      }
                         else
                         {
                      
 
 $viewed_products=product::where('id_product',$id_product);
      // $listing = Listing:where('id', $id);
-   foreach ($view as $key => $value) {
+   foreach ($view as $key => $value) 
      //$i++;
      // ->where('field_1', red_1); // Desired output
     {
@@ -346,7 +349,7 @@ $viewed_products=product::where('id_product',$id_product);
     }
   }
      
-}
+
 $results = $viewed_products->get();
 
 
@@ -354,6 +357,7 @@ $results = $viewed_products->get();
       return view('Home.pages.product.productdetails',['product'=>$product,'relate'=>$relate,'view'=>$results]);
     }
   }
+}
     public function search()
     {
      

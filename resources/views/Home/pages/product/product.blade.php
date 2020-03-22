@@ -1,5 +1,6 @@
  	@extends('Home.layouts.master')
 	@section('content')
+    <div style="margin-top: 200px;">
  <div class="content-wrapper">
 
 
@@ -14,6 +15,7 @@
 	
 	
 <!--	start banner-->
+
     <div class="abcxyz">
         <div class="contentlogin">
             <div class="contentlogin_top">
@@ -44,7 +46,7 @@
     <div class="container content-sp">
         <div class="row">
             <!-- <div class="col-md-1"></div> -->
-            <div class="col-md-12" style="background-color: red">
+            <div class="col-md-12">
                 
                 <div class="row">
                     <div class="col-md-3 sanpham-left">
@@ -194,7 +196,7 @@
                                 <div class="buttonsp">
                              
                                      <a class="xemchitiet" href="productdetails/{{$value->id_product}}">Xem Chi Tiết</a>
-                                    <a class="muangay" href="">Mua Ngay</a>
+                                    <a class="muangay" href="{{url('cart/'.$value->id_product)}}">Mua Ngay</a>
                                 </div>
                                 @if($value->discount!=null)
                                 <div class="giamgia">
@@ -231,13 +233,11 @@
 <!--	end content-product-->
 	
 	
-	
-
-    
+</div>
 
 
 
-  </div>
+  
 
   
 

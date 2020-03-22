@@ -12,13 +12,11 @@
 */
 // ->middleware('verified')
 use Illuminate\Http\Request;
+
 Auth::routes(['verify' => true]);
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('')->name('home');
+Route::get('','HomeController@index')->name('home');
 Route::get('/login','HomeController@login')->name('login');
 Route::get('/register','HomeController@register');
 Route::post('/login','HomeController@postlogin');
@@ -28,6 +26,21 @@ Route::get('/verify/{token}', 'VerifyController@VerifyEmail')->name('verify');
 Route::get('/resetpassword','HomeController@resetpassword');
 Route::post('/resetpassword','HomeController@serchmail');
 Route::get('/verifypass/{token}', 'VerifypassController@verifypass')->name('verifypass');
+
+Route::get('news','Home\NewsController@get')->name('news');
+Route::get('newsdetail/{id_news}','Home\NewsController@newsdetail');
+Route::get('newscategory/{id_category}','Home\NewsController@newscategory');
+
+
+Route::get('detailservice/{id_service}','Home\ServiceController@get');
+route::get('typeservice/{id_type_service}','Home\ServiceController@gettype');
+
+route::get('introduce','HomeController@introduce');
+route::get('contact','HomeController@contact');
+route::get('recruitment','HomeController@recruitment');
+
+route::get('trademark')->name('trademark');
+route::get('trademark')->name('product_type');
 Route::group(['prefix'=>'admin'],function()
 {
 Route::get('index','AdminController@index');
@@ -190,14 +203,60 @@ Route::get('index2','AdminController@index2');
      
     });
 });
+
 ////////GIAO DIÊN HOME
 Route::get('product','ProductController@product')->name('product');
 route::get('/productdetails/{id_product}','ProductController@productdetails');
 Route::post('/search','ProductController@search');
 
+route::get('cart','Home\CartController@index');
+route::get('cart/{id_product}','Home\CartController@add');
+
+route::group(['prefix'=>'ajax'],function()
+{
+   route::get('cart/{id_product}/{quantity}','Home\CartController@update');
+});
+
 route::get('test',function()
 {
+ //Session::flush();
+    // $cart = Session::get('cart');
+    // $cart[5]= array(
+    //     // 'id'=>3,
+    //     'quantity'=>6
+    // );
+    // Session::put('cart',$cart);
+ $cart = json_decode(Cookie::get('cart'),true);
+   
+        $cart[77]= array(
+        // 'id'=>3,
+        'quantity'=>72
+    );
 
+       Cookie::queue(Cookie::make('cart', json_encode($cart), 1));
+// foreach ($carts as $key => $value) 
+// {
+//     if($key==4 ||$key==8 )
+//     {
+//            foreach ($value as $s => $va) 
+   
+//     {
+//         # code...
+//         echo  $s.' ->'.$va;
+       
+
+//     }
+//     # 
+//     }
+
+
+// }
+  
+ return Response()->json($cart);
+ //    Session::put('cart', $cart);
+ //    unset($cart[3]);
+ //        Session::put('cart', $cart);
+ // return Response()->json($cart);
 //   $viewed_products='a';
 //      // $listing = Listing:where('id', $id);
 //    for($i=0;$i<4;$i++)
@@ -211,63 +270,35 @@ route::get('test',function()
 // $results = $viewed_products;
 // echo $results;
      //Session::flush();
-   $cart = Session::get('cart');
-   $cart[] = array
-         (
-           'id'=>4,
-          );
+   // $cart = Session::get('cart');
+   // $cart[] = array
+   //       (
+   //         'id'=>4,
+   //        );
   
-   Session::put('cart', $cart);
-    
+   // Session::put('cart', $cart);
+   //  $n=count($cart);
+   //  echo $n.':';
       
 
-        $n=count($cart);
-         echo 'Tổng'.$n.':';
-       
 
-                foreach ($cart as $id => $val) 
-             {
-    
-              echo $id.'>';
+      
+   //      foreach ($cart as $id =>$val) 
+   //      {
+   //         echo $id.'  ->  '  ; 
 
-            //    unset($cart[$id]);
-            // Session::put('cart', $cart);
-          
-              foreach ($val as $key) 
-              {
-                 echo $key.'    '  ; 
-
-                     if($n >3)
-                 {
-               //array_shift($cart);
-                unset($cart[$id]);
-            Session::put('cart', $cart);
-            if($n==4)
-            {
-             return;
-             }
-
-               }
-            }
-        //break; 
-                 
-                }
-
-            
-//         foreach ($val as $key) 
-//         {
-//            echo $key.'    '  ; 
-
-//                      if($n >3)
-//                  {
-//                //array_shift($cart);
-//                 unset($cart[$id]);
-//             Session::put('cart', $cart);
-//             // return;
-//                  }
-       
+   //                   if($n >3)
+   //               {
+   //             //array_shift($cart);
+   //              unset($cart[$id]);
+   //          Session::put('cart', $cart);
+   //          // return;
+   //               }
+   //         foreach ($val as $key) {
+   //             echo $key.'    '  ; 
+   //         }
         
-//     }
+   //  }
       
 
      
@@ -303,8 +334,7 @@ route::get('test',function()
 
 
 
-route::get('trademark/{}')->name('trademark');
-route::get('product_type/{}')->name('product_type');
+
 
 
 

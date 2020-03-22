@@ -98,17 +98,19 @@ window.onload = function()
 var a = document.getElementById('picture-img');
 var b = document.getElementById('content-text-h2');
 
+
+
 function getimaget1(){
-	a.src = "img/massage-da-nong_52899887d012446baa068beddb851a44_large.webp";
-	b.innerHTML = 'Dịch vụ công nghệ cao';
-	b.style.fontSize = "20px";
+    a.src = "../image/massage-da-nong_52899887d012446baa068beddb851a44_large.webp";
+    b.innerHTML = 'Dịch vụ công nghệ cao';
+    b.style.fontSize = "20px";
 }
 
 // document.getElementById("dichvucongnghecao").addEventListener('onclick',getimaget1())
 
 
 function getimaget2(){
-    a.src = "img/white-skin_63fce40852fe49dd853dba629e340bce_large.webp";
+    a.src = "../image/white-skin_63fce40852fe49dd853dba629e340bce_large.webp";
     b.innerHTML = 'Thư giãn và làm đẹp';
     b.style.fontSize = "20px";
 }
@@ -116,11 +118,10 @@ function getimaget2(){
 // document.getElementById("thugianvalamdep").addEventListener('onclick',getimaget2())
 
 function getimaget3(){
-	a.src = "img/long-may_dccea2cbec0f49fb8ebfb9049f4215a2_large.webp";
-	b.innerHTML = 'Vật lý trị liệu';
-	b.style.fontSize = "20px";
+    a.src = "../image/long-may_dccea2cbec0f49fb8ebfb9049f4215a2_large.webp";
+    b.innerHTML = 'Vật lý trị liệu';
+    b.style.fontSize = "20px";
 }
-
 // document.getElementById("vatlytrilieu").addEventListener('onclick',getimaget3())
 
 
@@ -229,3 +230,8 @@ function truvl(){
     }
    
 }
+
+// jqery tăng giảm số lượng
+
+
+

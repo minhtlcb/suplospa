@@ -27,9 +27,10 @@
     <p>Giá gói</p>
     <input type="number" name="price"  class="required" min="0" style=" width:50%">
 
-    <p>Chi tiết</p>
+    <p>Giới thiệu</p>
     <textarea id="textarea" name="description"></textarea>
-
+     <p>Chi tiết</p>
+    <textarea id="textarea" name="detail"></textarea>
 
     <button type="submit" class="btn btn-warning">Thêm</button>
   </form>

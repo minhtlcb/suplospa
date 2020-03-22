@@ -999,7 +999,7 @@ flex: 2;
     position: relative;
 
 }
-input{
+.aoluong input{
     pointer-events: none;
 }
  /*option*/
@@ -1038,4 +1038,7 @@ input{
             display: flex;
     justify-content: center;
             
+        }
+        .container-fluid{
+            position: unset !important;
         }

@@ -1,0 +1,297 @@
+
+/* banner */
+.abcxyz {
+    height: 300px;
+    padding: 30px 0;
+    background: url(../img/banner-suplo.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+      
+ }
+ .abcxyz_tensp{
+    color: white;
+    text-transform: lowercase;
+}
+
+.hoverbanner:hover{
+    color: orange;
+}
+.contentlogin_top h1 {
+    color: white;
+    font-size: 26px;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+@media only screen and (max-width:900px){
+    .abcxyz{
+        background-attachment: unset !important;
+    }
+}
+/* banner */
+
+/*css sản phẩm thương hiệu*/
+.allsp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+ .sanphamcon {
+    /*min-width: 270px;*/
+    width: 246px;
+    height: 395px;
+    margin-bottom: 20px;
+    /*margin: 0 20px;*/
+    /*width: 550px !important;*/
+    /*margin: 20px 45px 0 45px;*/
+    padding: 0 30px;
+    padding-top: 20px;
+    border: 2px solid white;
+    flex-wrap: wrap;
+    position: relative;
+}
+ .tensp h1 {
+    max-width: 100%;
+    margin-top: 5px;
+    height: 60px;
+    overflow: hidden;
+    /*background-color: red;*/
+    line-height: 27px;
+    font-size: 20px;
+}
+.giasp {
+    /*background-color: yellow;*/
+    color: #ff789e;
+    text-align: center;
+    margin-bottom: 20px;
+    /*display: flex;*/
+}
+
+.giasp h2 del {
+    font-size: 15px;
+    color: black;
+}
+.buttonsp {
+    position: relative;
+    /*top:40px;*/
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
+    
+}
+ .btn-chitiet {
+    background-color: white!important;
+    border: 1px solid #ff789e !important;
+    color: #ff789e!important;
+    width: 200px !important;
+}
+
+.btn-chitiet:hover {
+    background-color: #ff4579 !important;
+    border: 1px solid #ff4579 !important;
+    color: white !important;
+    display: none !important;
+}
+.xemchitiet{
+background-color: white !important;
+color: #ff789e !important;
+border: 1px solid #ff789e !important;
+}
+.xemchitiet:hover{
+background-color: #ff4579 !important;
+    border: 1px solid #ff4579 !important;
+    color: white !important;
+}
+.muangay:hover {
+    background-color: #ff4579 !important;
+    border: 1px solid #ff4579 !important;
+    color: white !important;
+}
+.giamgia {
+    background: red;
+    position: absolute;
+    border: 1px solid red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    top: 5px;
+    left: 0;
+    /*align-items: center;*/
+    display: flex;
+    /*justify-content: center;*/
+    color: white;
+    font-size: 10px;
+}
+
+.giamgia p {
+    margin: auto;
+}
+
+.moi p {
+    margin: auto;
+}
+
+.moi {
+    background: #FEA342;
+    position: absolute;
+    border: 1px solid #FEA342;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    top: 5px;
+    left: 35px;
+    /*align-items: center;*/
+    display: flex;
+    /*justify-content: center;*/
+    color: white;
+    font-size: 10px;
+}
+.sanphamcon img {
+    transition: transform .2s;
+}
+
+.sanphamcon img:hover {
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari 3-8 */
+    transform: scale(1.1);
+}
+
+.sanphamcon:hover {
+    /*display: inline;*/
+    border: 2px solid #ccc;
+}
+
+.sanphamcon a {
+    opacity: 0;
+    transition: 0.6s ease;
+    border: 1px solid #ff789e !important;
+    height: 40px;
+    text-decoration: none;
+
+
+}
+
+.buttonsp a{
+    text-align: center;
+    line-height: 37px;
+    margin: 0; 
+    text-decoration: none;
+    
+}
+.sanphamcon:hover a {
+    position: relative;
+    bottom: 10px;
+    background-color: #ff789e;
+    color: white;
+    border: none;
+    /*display: inline;*/
+    opacity: 1;
+    margin: 0 10px;
+    width: 250px;
+    height: 40px;
+    font-size: 10px;
+    font-weight: bold;
+
+}
+
+.sanphamlienquan{
+   margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+
+.sanphamlienquan a{
+    margin-right: 0;
+}
+/* responsive sản phẩm */
+@media only screen and (max-width:900px){
+    /* .sanphamlienquan{
+        justify-content: unset;
+        display: inline-flex;
+    } */
+    .sanphamlienquan a{
+        /* margin-right: 0; */
+    }
+    .select_option_price{
+        margin-left: 10%;
+        margin-top: 20px;
+    }
+    .sanphamcon{
+        width: 150px;
+        height: 448px;
+        padding: 0;
+    }
+    .tensp h1 {
+        width: 100% !important;
+        margin-top: 10px;
+        height: 40px;
+        overflow: hidden;
+        /*background-color: red;*/
+        line-height: 18px;
+        font-size: 17px;
+    }
+    .giasp {
+        /*background-color: yellow;*/
+        color: #ff789e;
+        text-align: center;
+        margin-bottom: 20px;
+        /*display: flex;*/
+    }
+    
+    .giasp h2 {
+        font-size: 24px;
+        
+    }
+    .buttonsp {
+        position: relative;
+        /*top:40px;*/
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        width: 100%;
+        margin: 0;
+        flex-wrap: wrap;
+        
+    }
+    .sanphamcon:hover a{
+        margin: 5px 5px;
+    }
+    .imgsp{
+        margin: 15px;
+    }
+}
+/* responsive sản phẩm */
+
+ .sanphamlienquan a{
+   font-size: 23px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-left: 10%;
+   color: #ff789e;
+}
+.select_option_price{
+    margin-right: 10%;
+}
+.choose_type{
+    height: 40px;
+}
+.row{
+    margin: 20px 0 0 0;
+}
+
+/*css sản phẩm thương hiệu*/

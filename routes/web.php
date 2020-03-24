@@ -215,6 +215,8 @@ route::get('cart/{id_product}','Home\CartController@add');
 route::group(['prefix'=>'ajax'],function()
 {
    route::get('cart/{id_product}/{quantity}','Home\CartController@update');
+   route::get('product/{id_trademark}','ProductController@search');
+   Route::post('searchpost','ProductController@searchpost');
 });
 
 route::get('test',function()

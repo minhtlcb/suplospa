@@ -95,4 +95,10 @@ catch(Exception $e) {
     	$product_type->delete();
     	return redirect('admin/product_type/get')->with('thongbao','Bạn đã xóa thành công');
     }
+
+
+    public function search($id_trademark)
+    {
+      echo 'id co'.$id_trademark;
+    }
 }

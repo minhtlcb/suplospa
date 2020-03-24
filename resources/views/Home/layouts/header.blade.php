@@ -163,8 +163,8 @@
     
                                 <label for="nav-giohang" class="overlayy"></label>
     
-                            <form action="giohang.php" method="post" class="nav__mobliee" style="overflow: scroll;">
-                               
+                            <form action="" method="post" class="nav__mobliee" style="overflow: scroll;">
+                              
                                 <label for="nav-giohang" class="nav__mobile_closes" >
                                     
                                    <i class="fa fa-times" aria-hidden="true"></i>

@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{asset('public/csscontact.css')}}">
          <link rel="stylesheet" href="{{asset('public/cssgiohang.css')}}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 @if(session()->has('message'))
     <div class="alert alert-success">
@@ -38,6 +39,7 @@
 <script type="text/javascript" src="{{asset('public/stylejs/style.js')}}"></script>
 <script type="text/javascript" src="{{url('public/home/js/bootstrap.min.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 @yield('script')
 
 <script type="text/javascript">
@@ -173,7 +175,60 @@ $(document).ready(function()
 
 });
 
+$(document).ready(function()
+{
+            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+ // $( "select" ).on( "change", showValues );
+    $('.checkk').click(function() {
+           // var checked = [];
+       
+           //  $("input[name='trademark[]']:checked").each(function ()
+           //            {
+           //                 // checked.push('orwhere("id_trademark"'+','+parseInt($(this).val())+')');
+           //                  //checked.push(parseInt($(this).val()));
+           //                 checked =($(this).val());
 
+ 
+
+                     
+
+         
+            //    if($("input[name='trademark[]']").prop("checked") == false){
+            //     unset(checked[parseInt($(this).val())])
+            //     checked.push(parseInt($(this).val()));
+            //    // var checked=[];
+            // }
+             
+  // $.get('ajax/product/'+checked,function(data)
+  //                             {
+  //                               $('.allsp').html(data);
+  //                             });
+
+
+
+$.ajax({
+  type: "POST",
+  // cache: false,
+  url: "{{url('ajax/searchpost')}}",
+  data: $("#formajax").serialize(),
+  //dataType: "Json",
+  success: function(data){
+  //Code của bạn
+  $('.allsp').html(data);
+  },
+  error: function(error){
+  //Code của bạn
+  alert('s');
+  }
+});
+         // if($(this).prop("checked") == true){
+               
+         //    }
+         //      else 
+        
+    });
+
+});
 
 </script>
 </body>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\product;
 use Illuminate\Support\Str;
@@ -358,18 +358,160 @@ $results = $viewed_products->get();
     }
   }
 }
-    public function search()
+ public function search($id_trademark)
     {
-     
+    // echo $id_trademark;
+    // $product=product::whereIn("id_trademark","<>",)->get();
+    $value = $id_trademark;
+  $product=product::whereIn("id_trademark",[])->get();
+        echo $product;
+        echo $value;
+ 
+
+   
+
+            // $a= str_replace("),",")->",$value);
+            //    $results=product::where("id_trademark",1)->$a->get();
+            // $users = DB::table('product')->whereIn('id_trademark', [2,3])->get();
+      
+     }
+  //      // $product->orwhere('id_trademark',$value);
+  //   echo $n;
+  
+
+  //   print_r($a);
+//       $results = $product->get();
 
 
-     $cat = Input::get('categories');
+   public function searchpost(Request $Request)
+    {
+       $trademark=[];
+       $product_type=[];
 
-    $cat = (int) $cat;
+      //$product=product::wherein('id_trademark',[2,3])->wherein('id_types',[3])->get();
+     $product=DB::table('product');
 
-    $vacancies = trademark::where('id_trademark', '=', $cat)->get();
-
-    return View::make('Home.pages.product.product')->with('trademark', $vacancies); 
-    }
+       if(isset($Request->trademark))
+       {
+   
+       foreach ($Request->trademark as $key => $value) 
+       {
+       
+       
+ array_push($trademark,$value);
+          
     
+       }
+           $product->wherein('id_trademark',$trademark);
+     }
+
+
+       
+
+      
+     //   // $product = $product->get();
+     //    //return view('Home.pages.ajaxproduct',['product'=>$product]);
+
+     // }
+     if($Request->has('product_type') )
+       {
+
+  
+       foreach ($Request->product_type as $key2 => $value2) 
+       {
+          array_push($product_type,$value2);
+
+       }
+       $product->wherein('id_types',$product_type);
+     }
+
+       
+//        $product->wherein('id_trademark',[$product_type]);
+
+//      }
+//          else if($Request->has('product_type') )
+//        {
+//         // echo 'sssssssssss';
+
+
+  
+//        foreach ($Request->product_type as $key2 => $value2) 
+//        {
+//          $product_type.=$value2.',';
+
+//        }
+
+       
+//        echo $product_type;
+
+//      }
+
+  if($Request->has('price_filter'))
+       {
+        // echo 'sssssssssss';
+
+    foreach ($Request->price_filter as $key2 => $value2) 
+       {
+        if($value2==0)
+        {
+          //select(DB::raw('sum(jumlah * harga) as total'))
+          $product-> whereRaw('price*(100-discount)/100>='.$value2);
+
+        // $product->where('price*(100-discount)/100 as gia','>=',0);
+
+       }
+       else if($value2==100000)
+        {
+
+             $product->whereRaw('price*(100-discount)/100<='.$value2);
+       }
+    else if($value2==200000)
+        {
+         $product->whereRaw('price*(100-discount)/100 between 100000 and 200000 ');
+       }
+        else if($value2==300000)
+        {
+         $product->whereRaw('price*(100-discount)/100 between 200000 and 300000 ');
+       }
+ else if($value2==400000)
+        {
+           $product->whereRaw('price*(100-discount)/100 between 300000 and 400000 ');
+       }
+        else if($value2==500000)
+        {
+          $product->whereRaw('price*(100-discount)/100 between 400000 and 500000 ');
+       }
+        else if($value2==1)
+        {
+         $product->whereRaw('price*(100-discount)/100>=500000 ');
+       }
+       }
+
+
+       
+       
+
+     }
+      // $product = $product->get();
+    //  return view('Home.pages.ajaxproduct',['product'=>$product]);
+     // else if(isset($Request->trademark))
+     //   {
+
+     //   foreach ($Request->trademark as $key => $value) 
+     //   {
+       
+     //    $product->orwhere('id_trademark',$value);
+         
+
+     //   }
+        $product=$product->get();
+         return view('Home.pages.ajaxproduct',['product'=>$product]);
+
+      
+      
+     }   
+       
 }
+?>
+
+                                
